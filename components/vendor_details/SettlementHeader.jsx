@@ -22,7 +22,7 @@ export default function SettlementHeader({ id, users, toast }) {
 
       await toast.promise(
         fetch(
-          "https://websockettest.venuebook.in:5000/admin/delete_vendor",
+          "https://webserver.venuebook.in:5000/admin/delete_vendor",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
