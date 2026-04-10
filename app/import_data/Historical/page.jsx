@@ -43,7 +43,7 @@ export default function HistoricalPage() {
 
     try {
 
-      const res = await fetch("https://websockettest.venuebook.in:5000/admin/fetchImported",{
+      const res = await fetch("https://webserver.venuebook.in:5000/admin/fetchImported",{
         method:'POST'
       });
 
