@@ -43,7 +43,7 @@ export default function QRCodesPage() {
       };
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/unrigistered_venues",
+        "https://webserver.venuebook.in:5000/admin/unrigistered_venues",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
