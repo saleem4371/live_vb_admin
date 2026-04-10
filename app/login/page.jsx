@@ -85,7 +85,7 @@ export default function LoginPage() {
       setLoading(true);
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/login",
+        "https://webserver.venuebook.in:5000/admin/login",
         {
           method: "POST",
           headers: {
