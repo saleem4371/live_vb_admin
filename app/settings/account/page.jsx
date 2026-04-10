@@ -73,7 +73,7 @@ export default function AccountDetails() {
       setLoading(true);
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/update_account",
+        "https://webserver.venuebook.in:5000/admin/update_account",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -115,7 +115,7 @@ export default function AccountDetails() {
       setFetchLoading(true);
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/account_details",
+        "https://webserver.venuebook.in:5000/admin/account_details",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
