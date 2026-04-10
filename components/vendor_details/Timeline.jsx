@@ -49,7 +49,7 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
   const loadPlans = async (userId) => {
     setLoading(true);
     try {
-      const res = await fetch("https://websockettest.venuebook.in:5000/admin/load_plans_setting", {
+      const res = await fetch("https://webserver.venuebook.in:5000/admin/load_plans_setting", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id: userId }),
@@ -73,7 +73,7 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
 
     setLoading(true);
     try {
-      await fetch("https://websockettest.venuebook.in:5000/admin/update_plan", {
+      await fetch("https://webserver.venuebook.in:5000/admin/update_plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -94,7 +94,7 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
   const saveBilling = async () => {
     setLoading(true);
     try {
-      await fetch("https://websockettest.venuebook.in:5000/admin/update_billing", {
+      await fetch("https://webserver.venuebook.in:5000/admin/update_billing", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -124,7 +124,7 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
     try {
       if (confirmType === "cancel") {
         const res = await fetch(
-          "https://websockettest.venuebook.in:5000/admin/cancel_subscription",
+          "https://webserver.venuebook.in:5000/admin/cancel_subscription",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -146,7 +146,7 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
 
       if (confirmType === "clear") {
         const res = await fetch(
-          "https://websockettest.venuebook.in:5000/admin/clear_booking",
+          "https://webserver.venuebook.in:5000/admin/clear_booking",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
