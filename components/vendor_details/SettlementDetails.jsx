@@ -71,7 +71,7 @@ export default function VendorDetails({ users, refreshVendor }) {
       };
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/update_vendor_detail",
+        "https://webserver.venuebook.in:5000/admin/update_vendor_detail",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
