@@ -35,7 +35,7 @@ export default function Vendors() {
       setLoading(true);
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/load_vendors"
+        "https://webserver.venuebook.in:5000/admin/load_vendors"
       );
 
       const data = await res.json();
