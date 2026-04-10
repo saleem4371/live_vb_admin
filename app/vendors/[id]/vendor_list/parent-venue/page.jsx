@@ -31,7 +31,7 @@ const [parent, setParent] = useState('');
           setLoading(true);
   
           const res = await fetch(
-            "https://websockettest.venuebook.in:5000/admin/getParent",
+            "https://webserver.venuebook.in:5000/admin/getParent",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
