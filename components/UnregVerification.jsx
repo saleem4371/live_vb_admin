@@ -11,7 +11,7 @@ export default function VendorVerification({ data }) {
   // ✅ Fetch latest vendors
   const fetchUnverifiedVendors = async () => {
     try {
-      const res = await fetch("https://websockettest.venuebook.in:5000/admin/set_un_verified_data");
+      const res = await fetch("https://webserver.venuebook.in:5000/admin/set_un_verified_data");
       const result = await res.json();
 
       if (!res.ok) throw new Error(result.message);
