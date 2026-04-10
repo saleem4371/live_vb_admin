@@ -27,7 +27,7 @@ export default function VendorInformation() {
       setLoading(true);
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/single_vendor_data",
+        "https://webserver.venuebook.in:5000/admin/single_vendor_data",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
