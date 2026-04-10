@@ -60,7 +60,7 @@ function CreatePlanModal({ close, refresh }) {
 
       setLoading(true);
 
-       const res = await fetch("https://websockettest.venuebook.in:5000/admin/plans_create", {
+       const res = await fetch("https://webserver.venuebook.in:5000/admin/plans_create", {
 
         method: "POST",
         headers: {
@@ -178,7 +178,7 @@ function ImportExcelModal({ close, refresh }) {
 
       try {
 
-        await fetch("https://websockettest.venuebook.in:5000/admin/plans_import", {
+        await fetch("https://webserver.venuebook.in:5000/admin/plans_import", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -248,7 +248,7 @@ export default function PlansPage() {
 
     try {
 
-      const res = await fetch("https://websockettest.venuebook.in:5000/admin/plans",{
+      const res = await fetch("https://webserver.venuebook.in:5000/admin/plans",{
         method:'POST'
       });
 
