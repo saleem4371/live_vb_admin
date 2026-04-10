@@ -62,7 +62,7 @@ export default function AdminSettings() {
       setLoading(true);
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/saveSettings",
+        "https://webserver.venuebook.in:5000/admin/saveSettings",
         {
           method: "POST",
           headers: {
@@ -113,7 +113,7 @@ export default function AdminSettings() {
       setFetchLoading(true);
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/charges_details",
+        "https://webserver.venuebook.in:5000/admin/charges_details",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
