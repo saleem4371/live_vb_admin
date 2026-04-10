@@ -94,7 +94,7 @@ const [ocrText, setocrText] = useState('');
       };
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/upload_kyc_upload",
+        "https://webserver.venuebook.in:5000/admin/upload_kyc_upload",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -130,7 +130,7 @@ const [ocrText, setocrText] = useState('');
       };
 
       const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/upload_bank_upload",
+        "https://webserver.venuebook.in:5000/admin/upload_bank_upload",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -160,7 +160,7 @@ const [ocrText, setocrText] = useState('');
     setLoading(true);
 
        const res = await fetch(
-        "https://websockettest.venuebook.in:5000/admin/kyc_update",
+        "https://webserver.venuebook.in:5000/admin/kyc_update",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -194,7 +194,7 @@ const [ocrText, setocrText] = useState('');
         setLoading(true);
 
         const res = await fetch(
-          "https://websockettest.venuebook.in:5000/admin/kyc_details",
+          "https://webserver.venuebook.in:5000/admin/kyc_details",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -269,7 +269,7 @@ const [ocrText, setocrText] = useState('');
     setOcrLoading(true);
 
     const res = await fetch(
-      "https://websockettest.venuebook.in:5000/v3/banner/get_vendor_ocr",
+      "https://webserver.venuebook.in:5000/v3/banner/get_vendor_ocr",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
