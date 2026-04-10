@@ -39,7 +39,7 @@ export default function VenueDetails() {
         setLoading(true);
 
         const res = await fetch(
-          "https://websockettest.venuebook.in:5000/admin/single_unregister_data",
+          "https://webserver.venuebook.in:5000/admin/single_unregister_data",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
