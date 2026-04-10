@@ -28,7 +28,7 @@ export default function Dashboard({ toast }) {
     const loadBillingFilter = async () => {
       try {
         const res = await fetch(
-          "https://websockettest.venuebook.in:5000/admin/overview_counts",
+          "https://webserver.venuebook.in:5000/admin/overview_counts",
           {
             method: "POST",
             headers: {
@@ -66,7 +66,7 @@ export default function Dashboard({ toast }) {
   };
 
   useEffect(() => {
-    const socket = io("https://websockettest.venuebook.in:5000/");
+    const socket = io("https://webserver.venuebook.in:5000/");
 
     socket.on("live_data", (msg) => {
       setData(msg);
