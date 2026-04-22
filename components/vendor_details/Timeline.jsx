@@ -6,6 +6,7 @@ import { Check, CalendarCheck, Bookmark, Loader2 } from "lucide-react";
 
 export default function VendorSubscription({ users, refreshVendor, toast }) {
   const [loading, setLoading] = useState(false);
+  const [buttonhide, setButtonhide] = useState(false);
   const [selectedMonthly, setSelectedMonthly] = useState(null);
   const [selectedYearly, setSelectedYearly] = useState(null);
   const [selectedBilling, setSelectedBilling] = useState([]);
@@ -100,6 +101,49 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
         body: JSON.stringify({
           user_id: users.user_id,
           selected: selectedBilling,
+          timeline: 'Paid',
+        }),
+      });
+
+      toast?.success("Booking settings saved");
+    } catch {
+      toast?.error("Failed to save booking");
+    } finally {
+      setLoading(false);
+    }
+  };  
+  
+  const saveFreeBilling = async () => {
+    setLoading(true);
+    try {
+      await fetch("https://webserver.venuebook.in:5000/admin/update_free_billing", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_id: users.user_id,
+            plans: [selectedMonthly, selectedYearly],
+          timeline: 'lifetime',
+        }),
+      });
+
+      toast?.success("Booking settings saved");
+    } catch {
+      toast?.error("Failed to save booking");
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  const saveYearBilling = async () => {
+    setLoading(true);
+    try {
+      await fetch("https://webserver.venuebook.in:5000/admin/update_free_billing", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          user_id: users.user_id,
+             plans: [selectedMonthly, selectedYearly],
+           timeline: '1 year',
         }),
       });
 
@@ -182,7 +226,7 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
       <div className="flex justify-between items-center">
         <div>
           <p className="font-medium text-gray-800">{plan.plan_name}</p>
-          <p className="text-sm text-gray-500">₹{plan.amounts}</p>
+          <p className="text-sm text-gray-500">₹{plan.offer_amount} ~ ₹{plan.amounts} ~ { plan.discount }% </p>
         </div>
         {selected && <Check className="text-blue-600" />}
       </div>
@@ -233,6 +277,30 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
               {loading && <Loader2 className="animate-spin" size={16} />}
               {loading ? "Saving..." : "Save Plan"}
             </button>
+<p onClick={() => setButtonhide(!buttonhide)} className="cursor-pointer">More</p>
+
+{buttonhide && (
+  <>
+   
+
+    <button
+      onClick={saveYearBilling}
+      className="cursor-pointer mt-6 w-full bg-purple-600 text-white py-2.5 rounded-lg flex items-center justify-center gap-2"
+    >
+      {loading && <Loader2 className="animate-spin" size={16} />}
+      1 Year Free
+    </button>
+
+     <button
+      onClick={saveFreeBilling}
+      className="cursor-pointer mt-6 w-full bg-purple-600 text-white py-2.5 rounded-lg flex items-center justify-center gap-2"
+    >
+      {loading && <Loader2 className="animate-spin" size={16} />}
+      Lifetime Free 
+    </button>
+  </>
+)}
+          
           </>
         ) : (
           <div className="bg-gray-50 border border-gray-200  rounded-lg p-4">
@@ -290,6 +358,8 @@ export default function VendorSubscription({ users, refreshVendor, toast }) {
           {loading && <Loader2 className="animate-spin" size={16} />}
           Save Settings
         </button>
+
+       
       </div>
 
       {/* DANGER ZONE */}
