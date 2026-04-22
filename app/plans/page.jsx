@@ -35,7 +35,8 @@ function CreatePlanModal({ close, refresh }) {
     price: "",
     billing_cycle: "Monthly",
     discount: "",
-    VenueCount:""
+    VenueCount:"",
+    offer_amount:""
   });
 
   const [errors, setErrors] = useState({});
@@ -110,6 +111,12 @@ function CreatePlanModal({ close, refresh }) {
           value={form.price}
           error={errors.price}
           onChange={(v) => setForm({ ...form, price: v })}
+        />
+        <Input
+          label="Offer amount"
+          value={form.offer_amount}
+          error={errors.offer_amount}
+          onChange={(v) => setForm({ ...form, offer_amount: v })}
         />
 
         <div className="mt-3">
