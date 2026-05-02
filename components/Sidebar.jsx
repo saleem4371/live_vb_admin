@@ -29,44 +29,78 @@ import {
   ChevronRight
 } from "lucide-react";
 
+// const sections = [
+//   {
+//     items: [
+//       { name: "Dashboard", path: "/dashboard", icon: Home },
+//       { name: "Billing", path: "/billing", icon: CreditCard },
+//       { name: "Vendors", path: "/vendors", icon: Users },
+//       { name: "Plans", path: "/plans", icon: Package },
+//       { name: "Account & Settings", path: "/settings", icon: Settings },
+//     ],
+//   },
+//   {
+//     title: "Master and Offers",
+//     showLimit: 2,
+//     items: [
+//       { name: "Category & Sub Category", path: "/category", icon: FolderTree },
+//       { name: "Advertisement", path: "/advertisement", icon: Megaphone },
+//       { name: "Venue Promotion", path: "/venue-promotion", icon: MapPin },
+//       { name: "Tags", path: "/tags", icon: Tags },
+//     ],
+//   },
+//   {
+//     title: "Venue Related",
+//     showLimit: 4,
+//     items: [
+//       { name: "Import", path: "/import_data", icon: Upload },
+//       { name: "Leads", path: "/leads", icon: UserPlus },
+//       // { name: "Import Historical", path: "/historical", icon: Database },
+//     ],
+//   },
+//   {
+//     title: "Front End",
+//     showLimit: 2,
+//     items: [
+//       { name: "About Page", path: "/about", icon: Info },
+//       { name: "Policies", path: "/policies", icon: FileText },
+//     ],
+//   },
+// ];
 const sections = [
-  {
-    items: [
+   {
+     items: [
       { name: "Dashboard", path: "/dashboard", icon: Home },
-      { name: "Billing", path: "/billing", icon: CreditCard },
-      { name: "Vendors", path: "/vendors", icon: Users },
-      { name: "Plans", path: "/plans", icon: Package },
+      { name: "vendor management", path: "/billing", icon: CreditCard },
+      { name: "customer management", path: "/vendors", icon: Users },
+      { name: "kyc verification", path: "/plans", icon: Package },
       { name: "Account & Settings", path: "/settings", icon: Settings },
-    ],
-  },
-  {
-    title: "Master and Offers",
-    showLimit: 2,
-    items: [
-      { name: "Category & Sub Category", path: "/category", icon: FolderTree },
-      { name: "Advertisement", path: "/advertisement", icon: Megaphone },
-      { name: "Venue Promotion", path: "/venue-promotion", icon: MapPin },
-      { name: "Tags", path: "/tags", icon: Tags },
-    ],
-  },
-  {
-    title: "Venue Related",
+     ],
+   },
+     {
+     // title: "Master and Offers",
+     showLimit: 2,
+     items: [
+       { name: "Finance taxation", path: "/category", icon: FolderTree },
+       { name: "Support module", path: "/advertisement", icon: Megaphone },
+       { name: "Marketing module", path: "/venue-promotion", icon: MapPin },
+       { name: "Loyalty module", path: "/tags", icon: Tags },
+     ],
+   },
+    {
+//     title: "Venue Related",
     showLimit: 4,
     items: [
-      { name: "Import", path: "/import_data", icon: Upload },
-      { name: "Leads", path: "/leads", icon: UserPlus },
+      { name: "Security Module", path: "/import_data", icon: Upload },
+      { name: "Communication Module", path: "/leads", icon: UserPlus },
+        { name: "Media & Asset Management Module", path: "/leads", icon: UserPlus },
+        { name: "API Module", path: "/leads", icon: UserPlus },
+         { name: "Commercial Module", path: "/leads", icon: UserPlus },
       // { name: "Import Historical", path: "/historical", icon: Database },
     ],
   },
-  {
-    title: "Front End",
-    showLimit: 2,
-    items: [
-      { name: "About Page", path: "/about", icon: Info },
-      { name: "Policies", path: "/policies", icon: FileText },
-    ],
-  },
-];
+    ];
+
 
 export default function Sidebar({
   mobile,
