@@ -79,7 +79,7 @@ const sections = [
    },
      {
      // title: "Master and Offers",
-     showLimit: 2,
+     showLimit: 4,
      items: [
        { name: "Finance taxation", path: "/category", icon: FolderTree },
        { name: "Support module", path: "/advertisement", icon: Megaphone },
@@ -89,7 +89,7 @@ const sections = [
    },
     {
 //     title: "Venue Related",
-    showLimit: 4,
+    showLimit: 5,
     items: [
       { name: "Security Module", path: "/import_data", icon: Upload },
       { name: "Communication Module", path: "/leads", icon: UserPlus },
